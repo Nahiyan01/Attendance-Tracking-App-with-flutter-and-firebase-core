@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "776294409339",
-    "project_id": "attendence-app-ca292",
-    "storage_bucket": "attendence-app-ca292.firebasestorage.app"
+    "project_number": "876697546833",
+    "project_id": "attendancetrackingapp-2f2fe",
+    "storage_bucket": "attendancetrackingapp-2f2fe.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:776294409339:android:1ee93f42edf181d4f4eede",
+        "mobilesdk_app_id": "1:876697546833:android:4d20624084024e05278870",
         "android_client_info": {
           "package_name": "com.example.attendence_app"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyAzhRj_sN7CDci9_FE2RTO3jQfnrQ8fY4k"
+          "current_key": "AIzaSyBucgFZcqJqN9-tcBGdR3n_V323hz7S_f0"
         }
       ],
       "services": {

@@ -66,6 +66,9 @@ class TuitionProvider extends ChangeNotifier {
     required int studentCount,
   }) async {
     try {
+      print(
+        '[TuitionProvider] addTuition called: name=$name, days=$days, studentCount=$studentCount',
+      );
       _setLoading(true);
       _errorMessage = null;
 
@@ -73,31 +76,37 @@ class TuitionProvider extends ChangeNotifier {
       if (name.trim().isEmpty) {
         _errorMessage = 'Tuition name cannot be empty';
         _setLoading(false);
+        print('[TuitionProvider] Validation failed: empty name');
         return false;
       }
 
       if (days.isEmpty) {
         _errorMessage = 'Please select at least one day';
         _setLoading(false);
+        print('[TuitionProvider] Validation failed: no days selected');
         return false;
       }
 
       if (studentCount <= 0) {
         _errorMessage = 'Number of students must be greater than 0';
         _setLoading(false);
+        print('[TuitionProvider] Validation failed: invalid student count');
         return false;
       }
 
+      print('[TuitionProvider] Calling service.addTuition()');
       await _tuitionService.addTuition(
         name: name.trim(),
         days: days,
         studentCount: studentCount,
       );
 
+      print('[TuitionProvider] Service returned successfully');
       _setLoading(false);
       return true;
     } catch (e) {
       _errorMessage = 'Failed to add tuition: $e';
+      print('[TuitionProvider] Exception caught: $_errorMessage');
       _setLoading(false);
       return false;
     }

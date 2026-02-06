@@ -169,26 +169,31 @@ class _AddTuitionScreenState extends State<AddTuitionScreen> {
   void _handleSave(BuildContext context) async {
     final validationError = _validateForm();
     if (validationError != null) {
+      print('[AddTuitionScreen] Validation error: $validationError');
       _showErrorDialog(context, validationError);
       return;
     }
 
+    print('[AddTuitionScreen] Validation passed, starting to add tuition');
     setState(() => _isSubmitting = true);
     final provider = context.read<TuitionProvider>();
     // Capture navigator & messenger before the async gap.
     final navigator = Navigator.of(context);
     final messenger = ScaffoldMessenger.of(context);
 
+    print('[AddTuitionScreen] Calling provider.addTuition()');
     final success = await provider.addTuition(
       name: _nameController.text.trim(),
       days: _selectedDays,
       studentCount: int.parse(_studentCountController.text.trim()),
     );
 
+    print('[AddTuitionScreen] addTuition returned: success=$success');
     if (!mounted) return;
     setState(() => _isSubmitting = false);
 
     if (success) {
+      print('[AddTuitionScreen] Success! Closing screen');
       navigator.pop();
       messenger.showSnackBar(
         const SnackBar(
@@ -197,6 +202,7 @@ class _AddTuitionScreenState extends State<AddTuitionScreen> {
         ),
       );
     } else {
+      print('[AddTuitionScreen] Error: ${provider.errorMessage}');
       _showErrorDialog(
         navigator.context,
         provider.errorMessage ?? 'An error occurred',

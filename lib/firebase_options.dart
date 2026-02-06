@@ -41,29 +41,29 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCFJ3-DzU4IDxjaG3H2N5EetVh7JfkMiCY',
-    appId: '1:776294409339:web:c6b2c1ff376a0b3cf4eede',
-    messagingSenderId: '776294409339',
-    projectId: 'attendence-app-ca292',
-    authDomain: 'attendence-app-ca292.firebaseapp.com',
-    storageBucket: 'attendence-app-ca292.firebasestorage.app',
-    measurementId: 'G-S2HMJR18S7',
+    apiKey: 'AIzaSyBe0Xr70m6wGKPmqTRBrJ6e3hKE6PR--tU',
+    appId: '1:876697546833:web:2e9feeaceba07655278870',
+    messagingSenderId: '876697546833',
+    projectId: 'attendancetrackingapp-2f2fe',
+    authDomain: 'attendancetrackingapp-2f2fe.firebaseapp.com',
+    storageBucket: 'attendancetrackingapp-2f2fe.firebasestorage.app',
+    measurementId: 'G-SYQ9JS93VJ',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAzhRj_sN7CDci9_FE2RTO3jQfnrQ8fY4k',
-    appId: '1:776294409339:android:1ee93f42edf181d4f4eede',
-    messagingSenderId: '776294409339',
-    projectId: 'attendence-app-ca292',
-    storageBucket: 'attendence-app-ca292.firebasestorage.app',
+    apiKey: 'AIzaSyBucgFZcqJqN9-tcBGdR3n_V323hz7S_f0',
+    appId: '1:876697546833:android:4d20624084024e05278870',
+    messagingSenderId: '876697546833',
+    projectId: 'attendancetrackingapp-2f2fe',
+    storageBucket: 'attendancetrackingapp-2f2fe.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyD217XUn1FLUSHjvy8Meoa3lmJP4NKHueI',
-    appId: '1:776294409339:ios:0a2f037db58aa258f4eede',
-    messagingSenderId: '776294409339',
-    projectId: 'attendence-app-ca292',
-    storageBucket: 'attendence-app-ca292.firebasestorage.app',
+    apiKey: 'AIzaSyCVFgXxkN92ZDlvTQ0HwRckoxYWvi_939o',
+    appId: '1:876697546833:ios:1dcbb3a109a66c36278870',
+    messagingSenderId: '876697546833',
+    projectId: 'attendancetrackingapp-2f2fe',
+    storageBucket: 'attendancetrackingapp-2f2fe.firebasestorage.app',
     iosBundleId: 'com.example.attendenceApp',
   );
 

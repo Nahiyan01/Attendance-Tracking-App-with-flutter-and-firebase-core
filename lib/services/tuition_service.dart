@@ -30,6 +30,10 @@ class TuitionService {
   }) async {
     try {
       final now = DateTime.now();
+      print(
+        '[TuitionService] Starting to add tuition: name=$name, days=$days, studentCount=$studentCount',
+      );
+
       // Use a timeout to avoid indefinite waits when network/rules block the write.
       final docRef = await _firestore
           .collection(_collectionName)
@@ -44,17 +48,27 @@ class TuitionService {
           .timeout(
             const Duration(seconds: 10),
             onTimeout: () {
+              print(
+                '[TuitionService] TIMEOUT: Write operation took longer than 10 seconds',
+              );
               throw Exception(
                 'Timed out while adding tuition. Check network or Firestore rules.',
               );
             },
           );
 
+      print(
+        '[TuitionService] Tuition added successfully with ID: ${docRef.id}',
+      );
       return docRef.id;
     } on FirebaseException catch (e) {
+      print(
+        '[TuitionService] FirebaseException: code=${e.code}, message=${e.message}',
+      );
       // Surface Firebase-specific errors clearly
       throw Exception('Firestore error while adding tuition: ${e.message}');
     } catch (e) {
+      print('[TuitionService] Unexpected error: $e');
       throw Exception('Failed to add tuition: $e');
     }
   }
